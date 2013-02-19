@@ -1,0 +1,24 @@
+Example of Go RPC over the connection encrypted and authenticated with spipe.
+
+RPC service accepts integer slice from clients and replies with the sum.
+
+
+1. Generate key file (the key is shared between server and clients):
+
+    $ head -c32 /dev/urandom > rpc.key
+
+
+2. Start server:
+
+    $ go run server/server.go -a=:8999 -k=rpc.key
+    Listening on [::]:8999
+
+
+3. Run client:
+
+    $ go run client/client.go -a=localhost:8999 -k=rpc.key 1 2 3 4
+    Result: 10
+    
+    $ go run client/client.go -a=localhost:8999 -k=rpc.key 21 10 11
+    Result: 42
+    
