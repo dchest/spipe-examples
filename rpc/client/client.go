@@ -1,4 +1,4 @@
-// RPC client
+// RPC client.
 
 package main
 
@@ -8,9 +8,9 @@ import (
 	"io/ioutil"
 	"log"
 	"net/rpc"
+	"strconv"
 
 	"github.com/dchest/spipe"
-	"strconv"
 )
 
 var (

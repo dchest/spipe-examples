@@ -4,10 +4,11 @@ package main
 
 import (
 	"flag"
-	"github.com/dchest/spipe"
 	"io/ioutil"
 	"log"
 	"net/rpc"
+
+	"github.com/dchest/spipe"
 )
 
 type Adder int
